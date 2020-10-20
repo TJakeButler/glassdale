@@ -1,13 +1,6 @@
-
-
 let criminals = []
 
-export const useCriminals = () => criminals.slice()
-
-
-
-
-
+export const useCriminals = () => criminals.slice();
 
 export const getCriminals = () => {
     
@@ -20,4 +13,6 @@ export const getCriminals = () => {
         }
     )
 }
+
+
 
