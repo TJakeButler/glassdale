@@ -1,8 +1,3 @@
-
-
-
-
-
 export const Criminal = (criminalObj) => {
     return `<section> 
             <h3>Name: ${criminalObj.name}</h3>
@@ -12,3 +7,4 @@ export const Criminal = (criminalObj) => {
             </section>
     `
 }
+
