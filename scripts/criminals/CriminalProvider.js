@@ -1,4 +1,3 @@
-
 let criminals = []
 
 export const useCriminals = () => {
@@ -13,4 +12,3 @@ export const getCriminals = () => {
     }
     )
 }
-
