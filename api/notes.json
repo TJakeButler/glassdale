@@ -7,6 +7,22 @@
       "suspect": "Yep",
       "note": "Guilty",
       "id": 1
+    },
+    {
+      "dateOfInterview": "2020-10-29",
+      "timestamp": 1603806105803,
+      "author": "Bubba",
+      "suspect": "Randy",
+      "note": "Innocent\n",
+      "id": 2
+    },
+    {
+      "dateOfInterview": "2020-10-29",
+      "timestamp": 1603816787392,
+      "author": "Mario",
+      "suspect": "Luigi",
+      "note": "His mansion is Haunted!",
+      "id": 3
     }
   ]
 }
