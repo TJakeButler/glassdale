@@ -1,6 +1,8 @@
 import { NoteAsHTML } from './NoteHTMLConverter.js';
 import {getNotes, useNotes} from './NotesDataProvider.js'
 
+import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
+
 // get the notes from the api >> use the notes array
 // iterate the notes array >> make an html representation each
 // render html string of notes to the notesContainer element on the DOM
@@ -13,21 +15,27 @@ eventHub.addEventListener("noteStateChanged", () => NoteList())
 
 
 export const NoteList = () => {
-    getNotes()
-    .then(() => {
-    const allNotes = useNotes()
-    render(allNotes)
+  getNotes()
+      .then(getCriminals)
+      .then(() => {
+          const notes = useNotes()
+          const criminals = useCriminals()
+          render(notes, criminals)
+      })
+}
 
-    })
+const render = (noteCollection, criminalCollection) => {
+  notesContainer.innerHTML = noteCollection.map(note => {
+      // Find the related criminal
+      const relatedCriminal = criminalCollection.find(criminal => criminal.id === note.criminalId)
+
+      return `
+          <section class="note">
+              <h2>Note about ${relatedCriminal.name}</h2>
+              ${note.note}
+          </section>
+      `
+  }).join("")
 }
 
 
-const render = (notesArray) => {
-    let notesHTMLRepresentations = ""
-    for (const note of notesArray) {
-      notesHTMLRepresentations += NoteAsHTML(note)
-    }
-    notesContainer.innerHTML = `
-              ${notesHTMLRepresentations}
-          `
-  }

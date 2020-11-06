@@ -1,28 +1,12 @@
 {
   "notes": [
     {
-      "dateOfInterview": "2020-10-28",
-      "timestamp": 1603731788742,
-      "author": "Jake",
-      "suspect": "Yep",
-      "note": "Guilty",
+      "dateOfInterview": "",
+      "timestamp": 1604610316335,
+      "author": "",
+      "criminalId": 13,
+      "note": "",
       "id": 1
-    },
-    {
-      "dateOfInterview": "2020-10-29",
-      "timestamp": 1603806105803,
-      "author": "Bubba",
-      "suspect": "Randy",
-      "note": "Innocent\n",
-      "id": 2
-    },
-    {
-      "dateOfInterview": "2020-10-29",
-      "timestamp": 1603816787392,
-      "author": "Mario",
-      "suspect": "Luigi",
-      "note": "His mansion is Haunted!",
-      "id": 3
     }
   ]
 }
