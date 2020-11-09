@@ -22,5 +22,11 @@
 }
 
 .notesContainer {
-    flex: 1
+    flex: 1;
+    border: 1px solid black;
 }
+
+.note {
+    border: 1px solid black;
+}
+

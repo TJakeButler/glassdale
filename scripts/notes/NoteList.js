@@ -1,5 +1,5 @@
 import { NoteAsHTML } from './NoteHTMLConverter.js';
-import {getNotes, useNotes} from './NotesDataProvider.js'
+import {getNotes, useNotes, deleteNote} from './NotesDataProvider.js'
 
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
 
@@ -31,11 +31,33 @@ const render = (noteCollection, criminalCollection) => {
 
       return `
           <section class="note">
-              <h2>Note about ${relatedCriminal.name}</h2>
+              <h2>Note about:  ${relatedCriminal.name}</h2>
               ${note.note}
           </section>
+          <button id="deleteNote--${note.id}">Delete</button>
       `
   }).join("")
 }
 
 
+
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+       deleteNote(id).then(
+           () => {
+               const updatedNotes = useNotes()
+               const criminals = useCriminals()
+               render(updatedNotes, criminals)
+           }
+       )
+    }
+})
