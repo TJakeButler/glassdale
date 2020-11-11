@@ -1,10 +1,5 @@
 const eventHub = document.querySelector(".container")
 
-
-
-
-
-
 export const Criminal = (criminalObj, facilities) => {
   return `
       <div id="criminal-${criminalObj.id}" class="criminal">
@@ -23,7 +18,6 @@ export const Criminal = (criminalObj, facilities) => {
       </div>
   `
 }
-
 
 eventHub.addEventListener("click", (eventObj) => {
   // split the id of the alibi button!

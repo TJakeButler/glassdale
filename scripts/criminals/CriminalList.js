@@ -18,21 +18,24 @@ let criminals = []
 
 
 export const CriminalList = () => {
-
+  
   getCriminals()
   .then(getFacilities)
   .then(getCriminalFacilities)
-    .then(() => {
-      // are these vars the same as the  lines 15-17
-      const facilities = useFacilities()
-      const crimFac = useCriminalFacilities()
-      const criminals = useCriminals()
-      render(criminals,facilities, crimFac)
-    })
-
+  .then(() => {
+    
+     facilities = useFacilities()
+     crimFac = useCriminalFacilities()
+     criminals = useCriminals()
+    render(criminals,facilities, crimFac)
+  })
+  
 }
 
+
+
 const render = (criminalsToRender, allFacilities, allRelationships) => {
+  
   let criminalsHTMLRepresentations = ""
  // Step 1 - Iterate all criminals
  contentTarget.innerHTML = criminalsToRender.map(
@@ -47,15 +50,13 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
       })
 
       // Must pass the matching facilities to the Criminal component
+      
       return Criminal(criminalObject, facilities)
   }
 ).join("")
 
 
 }
-
-
-
 
 // for (const criminal of criminalsArray) {
 
@@ -67,10 +68,6 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
 //           ${criminalsHTMLRepresentations}
 //         </section>
 //       `
-
-
-
-
 
 
 
@@ -113,7 +110,7 @@ eventHub.addEventListener("crimeSelected", event => {
       Then invoke render() and pass the filtered collection as
       an argument
     */
-    render(filteredCriminalsArray)
+    render(filteredCriminalsArray,facilities, crimFac)
   }
 })
 
@@ -146,7 +143,7 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
   )
   console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
 
-  render(filteredArrayCriminals)
+  render(filteredArrayCriminals,facilities, crimFac)
   console.log("CriminalList: Filtered list of criminals rendered to DOM")
 })
 

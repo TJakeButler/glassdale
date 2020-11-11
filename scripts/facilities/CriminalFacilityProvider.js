@@ -13,8 +13,3 @@ export const getCriminalFacilities = () => {
 }
 
 
-getCriminalFacilities()
-.then(() => {
-    const outPut = useCriminalFacilities()
-    console.log(outPut)
-})
