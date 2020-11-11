@@ -1,6 +1,8 @@
 import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionProvider.js"
+import { getFacilities } from "../facilities/FacilityProvider.js"
+import { getCriminalFacilities } from "../facilities/CriminalFacilityProvider.js"
 
 /*
     Which element in your HTML contains all components?
