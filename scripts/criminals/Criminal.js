@@ -1,6 +1,6 @@
 const eventHub = document.querySelector(".container")
 
-export const Criminal = (criminalObj) => {
+export const Criminal = (criminalObj, facilities) => {
   return `
       <div id="criminal-${criminalObj.id}" class="criminal">
         <h5>${criminalObj.name}</h5>
@@ -8,11 +8,16 @@ export const Criminal = (criminalObj) => {
         <p>Crime: ${criminalObj.conviction}</p>
         <p>Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p>
         <p>Term end: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p>
+        <div>
+        <h2>Facilities</h2>
+        <ul>
+            ${facilities.map(f => `<li>${f.facilityName}</li>`).join("")}
+        </ul>
+    </div>
         <button id="associates--${criminalObj.id}">Associate Alibis</button>
       </div>
   `
 }
-
 
 eventHub.addEventListener("click", (eventObj) => {
   // split the id of the alibi button!

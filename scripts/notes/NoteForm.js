@@ -15,7 +15,7 @@ export const NoteForm = () => {
     getCriminals()
     .then(() => {
         const NotesArray = useCriminals()
-        console.log("Notes Array Being Invoked!!!!!!!!!!!", NotesArray)
+        // console.log("Notes Array Being Invoked!!!!!!!!!!!", NotesArray)
         render(NotesArray)
     })
     

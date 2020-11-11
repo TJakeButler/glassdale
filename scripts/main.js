@@ -8,6 +8,8 @@ import { NoteList} from "./notes/NoteList.js"
 import { createAlibiEventListener } from "./criminals/AlibiList.js"
 import { WitnessesButton } from "./witnesses/WitnessStmntButton.js";
 import "./witnesses/WitnessStmntList.js"
+import "./facilities/FacilityProvider.js"
+import "./facilities/CriminalFacilityProvider.js"
 
 
 OfficerList()
