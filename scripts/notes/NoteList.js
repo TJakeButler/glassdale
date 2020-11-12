@@ -27,8 +27,10 @@ export const NoteList = () => {
 const render = (noteCollection, criminalCollection) => {
   notesContainer.innerHTML = noteCollection.map(note => {
       // Find the related criminal
-      const relatedCriminal = criminalCollection.find(criminal => criminal.id === note.criminalId)
-
+      const relatedCriminal = criminalCollection.find(criminal => 
+        
+        criminal.id === note.criminalId)
+        
       return `
           <section class="note">
               <h2>Note about:  ${relatedCriminal.name}</h2>
